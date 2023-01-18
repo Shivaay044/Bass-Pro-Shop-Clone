@@ -8,31 +8,36 @@ import { GoLocation}  from 'react-icons/go'
 import {HiOutlineUserCircle} from 'react-icons/hi'
 import {GiShoppingCart} from 'react-icons/gi'
 import { Icon } from "@chakra-ui/react";
+import {BsArrowRightCircleFill} from 'react-icons/bs'
+import React from 'react';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+
+
 
 
 const links = [
-    {path:'/',title:'Home'},
-    {path:'/boating',title:'Boating'},
-    {path:'/shooting',title:'Shooting'},
-    {path:'/camping',title:'Camping'},
-    {path:'/home&gift',title:'Home & Gift'},
-    {path:'/bargainCave',title:'Bargain Cave'},
+    {path:'/',title:'Home',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/boating',title:'Boating',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/shooting',title:'Shooting',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/camping',title:'Camping',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/home&gift',title:'Home & Gift',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/bargainCave',title:'Bargain Cave',link1:'link1',link2:'link2',link3:'link3'},
 ]
 
 
 export default function Navbar(){
     return(
-        <>
-        <Box  w='100%' p={4}  >
+        <Box>
+        <Box  w='100%' p={4} fontFamily='cursive'  >
         <Flex justifyContent='space-around'>
          <Box>
-         <Icon boxSize={22} as={GoLocation} /> <b>My Store: Find A Store</b>
+         <Icon boxSize={22} as={GoLocation} /> <b>My Store: <NavLink to='/location'>Find A Store</NavLink></b>
          </Box>
           <Box >
             <b>FREE Shipping on Orders $50+</b>
           </Box>
           <Box>
-            <b>Winter Clothing   |  Shop Now Arrow</b>
+            <b>Winter Clothing   |  <Icon as={BsArrowRightCircleFill}></Icon> </b>
           </Box>
           </Flex>
         </Box>
@@ -65,7 +70,7 @@ export default function Navbar(){
         pb={10} 
         pl={30}
         pr={17} 
-        borderRadius={20}
+        borderRadius={30}
         variant="outline"
          placeholder={`What can we help you find?`} />
       </InputGroup>
@@ -95,11 +100,23 @@ export default function Navbar(){
         {
             links.map((el)=>(
                 <>
-                 <Spacer/>
+                <Spacer/>
+              <MDBDropdown>
+              <MDBDropdownToggle tag='a' >
+                {el.title}
+              </MDBDropdownToggle>
+              <MDBDropdownMenu>
+                <MDBDropdownItem link><NavLink  to={el.path}>{el.title}</NavLink> </MDBDropdownItem>
+                <MDBDropdownItem link><NavLink  to={el.path}>{el.link1}</NavLink> </MDBDropdownItem>
+                <MDBDropdownItem link><NavLink  to={el.path}>{el.link2}</NavLink> </MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
+            <Spacer/>
+                 {/* <Spacer/>
                 <Box p='4'>
                   <NavLink  to={el.path}>{el.title}</NavLink> 
                 </Box>
-                <Spacer/>
+                <Spacer/> */}
                 </>  
             ))
         } 
@@ -107,8 +124,7 @@ export default function Navbar(){
         </Link>
         </Box>
         <hr></hr>
-
-        </>
+        </Box>
     )
 }
 

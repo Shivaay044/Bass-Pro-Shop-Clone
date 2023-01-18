@@ -1,7 +1,12 @@
 import React from "react";
+import { Box } from "@chakra-ui/react";
 
 function BoatingPg() {
-  return <div>BoatingPg</div>;
+  return (
+    <Box>
+      
+    </Box>
+  );
 }
 
 export default BoatingPg;
