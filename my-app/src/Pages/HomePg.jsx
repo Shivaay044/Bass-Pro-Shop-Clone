@@ -3,11 +3,13 @@ import React from "react";
 import { Image } from "@chakra-ui/react";
 import Carousel from '../Component/HomeComponent/Carousel'
 import Footer from "../Component/NavbarComponet/Footer";
+import Navbar from "../Component/NavbarComponet/Navbar";
 
 
 function HomePg() {
   return (
     <>
+    <Navbar/>
       <Box>
         <Box border='1px solid black' w='93%' h='430px' m='auto'>
           <Image w='100%' h='100%'  boxSize='100%'
