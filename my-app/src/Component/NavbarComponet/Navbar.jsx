@@ -9,10 +9,13 @@ import {HiOutlineUserCircle} from 'react-icons/hi'
 import {GiShoppingCart} from 'react-icons/gi'
 import { Icon } from "@chakra-ui/react";
 import {BsArrowRightCircleFill} from 'react-icons/bs'
-import React from 'react';
+import React, { useContext } from 'react';
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
+import { useState,useEffect } from "react";
+import axios from "axios";
+import { AuthContext } from "../../Context/AuthContext";
 
-
+let logo ="https://img.freepik.com/free-vector/supermarket-logo-design-with-green-cart_23-2148464170.jpg?w=2000"
 
 
 const links = [
@@ -21,11 +24,26 @@ const links = [
     {path:'/shooting',title:'Shooting',link1:'link1',link2:'link2',link3:'link3'},
     {path:'/camping',title:'Camping',link1:'link1',link2:'link2',link3:'link3'},
     {path:'/home&gift',title:'Home & Gift',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/bargainCave',title:'Bargain Cave',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/bargainCave',title:'Clothing Cave',link1:'link1',link2:'link2',link3:'link3'},
 ]
 
 
 export default function Navbar(){
+
+
+
+
+const {setSearch} = useContext(AuthContext)
+
+
+
+   const handleSearch = (e)=>{
+      let {value} = e.target
+      setSearch(value)
+   }
+
+
+
     return(
         <Box>
         <Box  w='100%' p={4} fontFamily='cursive'  >
@@ -49,10 +67,12 @@ export default function Navbar(){
         <Flex >
         <Spacer/>
         <Box w='10%' alignItems='center' height='40px'>
-        <Img  
-        w='100%'
-        h='100%'
-        src='https://assetshare.basspro.com/content/dam/bps-general-assets/web/site-elements/images/Redesign/Header/bass-pro-logo-2x.png'>
+        <Img 
+        mt='-60' 
+        w='180%'
+        h='400%'
+        objectFit='contain'
+        src={logo}>
         </Img>
         </Box>
         <Spacer/>
@@ -72,6 +92,7 @@ export default function Navbar(){
         pr={17} 
         borderRadius={30}
         variant="outline"
+        onChange={handleSearch}
          placeholder={`What can we help you find?`} />
       </InputGroup>
         </Box>
@@ -79,10 +100,12 @@ export default function Navbar(){
         <Box height='100%' w='20%' >
         <Flex>
         <Box>
+             <NavLink to='/register-login'>
              <HiOutlineUserCircle size={40} />
+             </NavLink>
         </Box>
         <Box ml={15}>
-             <GiShoppingCart size={40}/>
+            <NavLink to='/cart'> <GiShoppingCart color="black" size={40}/></NavLink>
           <Box bg='yellowgreen' borderRadius={60} display='inline-block'  position='relative' right={10} top={-20}>
            10
          </Box>

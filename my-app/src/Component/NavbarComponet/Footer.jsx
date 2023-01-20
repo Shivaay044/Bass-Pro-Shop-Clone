@@ -4,6 +4,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Box, Button,Center,Icon } from '@chakra-ui/react';
 import {AiOutlineLogin} from 'react-icons/ai'
+import { NavLink } from 'react-router-dom';
 
 
 export default function App() {
@@ -122,7 +123,9 @@ export default function App() {
       </section>
 
       <Center m={10}>
-        <Button fontWeight='bold' fontFamily='cursive' color='green' bg='ActiveBorder' borderRadius={10}>Click Here To SignUp</Button><br></br> <Icon as={AiOutlineLogin}/>
+      <NavLink to='/register-login'>
+      <Button fontWeight='bold' fontFamily='cursive' color='green' bg='ActiveBorder' borderRadius={10}>Click Here To SignUp</Button><Icon as={AiOutlineLogin}/>
+             </NavLink>
         </Center>
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>

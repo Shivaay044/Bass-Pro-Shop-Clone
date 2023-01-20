@@ -5,18 +5,18 @@ import { Select } from '@chakra-ui/react'
 import { useState,useEffect } from "react";
 import axios from 'axios';
 import BoatingProCard from "../Component/ProductsComp/BoatingProCard";
-import HomeGifCard from "../Component/ProductsComp/HomeGifCard";
+import CampingCard from "../Component/ProductsComp/CampingCard";
 import Footer from '../Component/NavbarComponet/Footer'
 import Navbar from "../Component/NavbarComponet/Navbar";
 import { AuthContext } from "../Context/AuthContext";
 import SortSelectTag from "../Component/ProductsComp/SortSelectTag";
 
 
-function BoatingPg() {
+function ClothingPg() {
     
 
 
-  const {homeGif}  = useContext(AuthContext)
+    const {clothing} = useContext(AuthContext)
 
 
   return (
@@ -57,13 +57,13 @@ function BoatingPg() {
              templateRows='repeat(2,1fr)'>
 
           {
-            homeGif.map((el)=>(
-              <HomeGifCard
+            clothing.map((el)=>(
+              <CampingCard
               id={el.id}
-              brand={el.ec_brand}
-              title={el.title}
-              price={el.maxofferprice}
-              image={el.topthumbnail}
+              brand={el.category}
+              title={el.name}
+              price={el.prise}
+              image={el.img}
               />
 
             ))
@@ -75,8 +75,8 @@ function BoatingPg() {
     </Box>
    </Flex>
    <Footer/>
-   </>
+    </>
   );
 }
 
-export default BoatingPg;
+export default ClothingPg;
