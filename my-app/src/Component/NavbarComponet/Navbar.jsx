@@ -1,30 +1,31 @@
 import { Link, NavLink } from "react-router-dom";
-import { Box, Divider, Flex, Img } from '@chakra-ui/react'
+import { Box, Button, Center, Divider, Flex, Img } from '@chakra-ui/react'
 import {  Spacer } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
-import {  InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {  InputGroup, InputLeftElement,Text } from "@chakra-ui/react";
 import { SearchIcon, SpinnerIcon } from "@chakra-ui/icons";
 import { GoLocation}  from 'react-icons/go'
 import {HiOutlineUserCircle} from 'react-icons/hi'
 import {GiShoppingCart} from 'react-icons/gi'
 import { Icon } from "@chakra-ui/react";
 import {BsArrowRightCircleFill} from 'react-icons/bs'
+import {FaSignOutAlt} from 'react-icons/fa'
 import React, { useContext } from 'react';
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
-import { useState,useEffect } from "react";
-import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
+import { toast } from "react-hot-toast";
 
 let logo ="https://img.freepik.com/free-vector/supermarket-logo-design-with-green-cart_23-2148464170.jpg?w=2000"
 
 
 const links = [
-    {path:'/',title:'Home',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/boating',title:'Boating',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/shooting',title:'Shooting',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/camping',title:'Camping',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/home&gift',title:'Home & Gift',link1:'link1',link2:'link2',link3:'link3'},
-    {path:'/bargainCave',title:'Clothing Cave',link1:'link1',link2:'link2',link3:'link3'},
+    {path:'/',title:'Home'},
+    {path:'/fishing',title:'Fishing',link1:'Fishing Reels',link2:'Fish Food',link3:'Fish Finder'},
+    {path:'/boating',title:'Boating',link1:'Baoting Accesories ',link2:'Marine Electronics',link3:'Trolling Motors'},
+    {path:'/shooting',title:'Shooting',link1:'Mouser',link2:'Automatic',link3:'GLCT'},
+    {path:'/camping',title:'Camping',link1:'Dome Tent',link2:'Cabin Tent',link3:'Eclipse'},
+    {path:'/home&gift',title:'Home & Gift',link1:'Decor',link2:'Gaint Berber',link3:'Coral'},
+    {path:'/bargainCave',title:'Clothing Cave',link1:'Calvin',link2:'Louise Phiphleep',link3:'Lewis'},
 ]
 
 
@@ -35,18 +36,19 @@ export default function Navbar(){
 
 const {setSearch} = useContext(AuthContext)
 
-
+   const {isAuth,setIsAuth,cart} = useContext(AuthContext)
 
    const handleSearch = (e)=>{
       let {value} = e.target
       setSearch(value)
    }
 
-
+  let user_name = localStorage.getItem("user_name")
+    
 
     return(
         <Box>
-        <Box  w='100%' p={4} fontFamily='cursive'  >
+        <Box  w='100%' p={3} fontFamily='cursive'  >
         <Flex justifyContent='space-around'>
          <Box>
          <Icon boxSize={22} as={GoLocation} /> <b>My Store: <NavLink to='/location'>Find A Store</NavLink></b>
@@ -63,12 +65,13 @@ const {setSearch} = useContext(AuthContext)
         
         <hr/>
 
-        <Box w='100%' p={20} >
-        <Flex >
+        <Box alignItems={'center'} justifySelf={'center'} w='100%' h={100} p={20} >
+        <Flex>
         <Spacer/>
         <Box w='10%' alignItems='center' height='40px'>
         <Img 
-        mt='-60' 
+        mt='-60'
+        ml={'-35px'} 
         w='180%'
         h='400%'
         objectFit='contain'
@@ -97,18 +100,29 @@ const {setSearch} = useContext(AuthContext)
       </InputGroup>
         </Box>
         <Spacer/>
-        <Box height='100%' w='20%' >
-        <Flex>
-        <Box>
+        <Box  w='20%' >
+        <Flex justifyContent={'space-evenly'}>
+        <Box textAlign={'center'}>
              <NavLink to='/register-login'>
              <HiOutlineUserCircle size={40} />
+             
+                {
+                 isAuth?<Text fontWeight={'semibold'} fontFamily={'monospace'} color={'black'} textAlign={'center'}>Hey! {user_name}</Text>:""
+                }
+            
              </NavLink>
         </Box>
         <Box ml={15}>
             <NavLink to='/cart'> <GiShoppingCart color="black" size={40}/></NavLink>
-          <Box bg='yellowgreen' borderRadius={60} display='inline-block'  position='relative' right={10} top={-20}>
-           10
+          <Box bg='cadetblue' fontWeight={'bold'} textAlign={'center'} w={20} h={20} borderRadius={20} display='inline-block'  position='relative' right={4} top={-12}>
+          {cart.length}
          </Box>
+        </Box>
+
+        <Box>
+        <Button isDisabled={isAuth===false} onClick={()=>{setIsAuth(false);toast.success("Logout success")}} border={"none"} bg={'Background'}>
+        <FaSignOutAlt size={40}/>
+        </Button>
         </Box>
         </Flex>
         </Box>

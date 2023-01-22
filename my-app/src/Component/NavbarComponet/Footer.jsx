@@ -18,22 +18,22 @@ export default function App() {
         
         
         <div>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.facebook.com/' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='facebook-f' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://twitter.com/i/flow/login' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='twitter' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.google.com/' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='google' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.instagram.com/' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='instagram' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://www.linkedin.com/feed/' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='linkedin' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://github.com/' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='github' />
           </a>
         </div>
@@ -45,10 +45,10 @@ export default function App() {
             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon color='secondary' icon='gem' className='me-3' />
-                Company name
+                VEGAN MARKET
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
+              If you are using a screen reader and are having problems using this website, please call 1-800-227-7776 for assistance. Lorem ipsum dolor sit
                 amet, consectetur adipisicing elit.
               </p>
             </MDBCol>
@@ -57,22 +57,22 @@ export default function App() {
               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Angular
+                  Bass Pro Shops
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  React
+                  Cabelas
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Vue
+                  Garmin
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Laravel
+                  Vortex
                 </a>
               </p>
             </MDBCol>
@@ -131,7 +131,7 @@ export default function App() {
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+          Vegan_Market.com
         </a>
       </div>
     </MDBFooter>

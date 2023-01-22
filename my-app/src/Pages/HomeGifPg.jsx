@@ -4,12 +4,11 @@ import { Flex, Spacer } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { useState,useEffect } from "react";
 import axios from 'axios';
-import BoatingProCard from "../Component/ProductsComp/BoatingProCard";
-import HomeGifCard from "../Component/ProductsComp/HomeGifCard";
+import HomeGifCard from "../Component/ProductsComp/ProductCard/HomeGifCard";
 import Footer from '../Component/NavbarComponet/Footer'
 import Navbar from "../Component/NavbarComponet/Navbar";
 import { AuthContext } from "../Context/AuthContext";
-import SortSelectTag from "../Component/ProductsComp/SortSelectTag";
+import SortSelectTag from "../Component/ProductsComp/ShortingComp/SortSelectTag";
 
 
 function BoatingPg() {
@@ -45,7 +44,7 @@ function BoatingPg() {
     <Box w='80%'  m={10} border='1px solid black'>
     <Flex justifyContent='space-between' m={25}>
       <Box>
-      <Text fontFamily='fantasy' fontSize={20}>FISH FINDERS & NAVIGATION</Text>
+      <Text fontFamily='fantasy' fontSize={20}>HOME & GIF ACCESSORIES</Text>
       </Box>
       <Box >
          <SortSelectTag/>
@@ -62,6 +61,7 @@ function BoatingPg() {
               id={el.id}
               brand={el.ec_brand}
               title={el.title}
+              category={el.category}
               price={el.maxofferprice}
               image={el.topthumbnail}
               />

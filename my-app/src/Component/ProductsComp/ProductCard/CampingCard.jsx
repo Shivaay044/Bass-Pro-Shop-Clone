@@ -6,20 +6,44 @@ import {
     Text,
     Stack,
     Image,
+    Button
   } from '@chakra-ui/react';
+  import axios from 'axios';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthContext';
+import { toast } from 'react-hot-toast';
+import {TfiShoppingCartFull} from 'react-icons/tfi'
+import { Toaster } from 'react-hot-toast';
   
   const IMAGE =
     'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
   
-  export default function FishingCard({title,brand,price,image,id}) {
+  export default function CampingCard({title,brand,price,image,id,category}) {
+ 
+    const {camping,getCart} = useContext(AuthContext)
 
-
-   console.log(title)
+    const handleCart = (id)=>{
+      let obj = camping.reduce((acc,el)=>{
+       if(el.id==id){
+         
+         acc = {...el}
+       }
+       return acc
+      },{})
+     
+      axios.post(`http://localhost:8080/cart`,
+       obj
+      )
+      .then(()=>getCart(),toast("Item added to Cart!"))
+      .catch((err)=>console.log(err))
+ 
+    }
 
     return (
 
         
       <Center py={12}>
+      <Toaster toastOptions={{style:{color:"coral"}}}/>
         <Box
            
           role={'group'}
@@ -65,6 +89,9 @@ import {
             <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
               {brand}
             </Text>
+            <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+              {category}
+            </Text>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
               {title}
             </Heading>
@@ -76,6 +103,7 @@ import {
                 $199
               </Text>
             </Stack>
+            <Button onClick={()=>{handleCart(id)}} borderRadius={6}><TfiShoppingCartFull/></Button>
           </Stack>
         </Box>
       </Center>

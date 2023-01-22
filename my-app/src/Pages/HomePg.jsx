@@ -4,11 +4,17 @@ import { Image } from "@chakra-ui/react";
 import Carousel from '../Component/HomeComponent/Carousel'
 import Footer from "../Component/NavbarComponet/Footer";
 import Navbar from "../Component/NavbarComponet/Navbar";
-
+import  { toast, Toaster } from 'react-hot-toast'
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 function HomePg() {
+
+ 
+
   return (
     <>
+    <Toaster toastOptions={{duration:2000}} />
     <Navbar/>
       <Box>
         <Box border='1px solid black' w='93%' h='430px' m='auto'>
