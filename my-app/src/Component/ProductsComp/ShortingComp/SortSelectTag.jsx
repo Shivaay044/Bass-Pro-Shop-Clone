@@ -1,6 +1,6 @@
 import { Select } from '@chakra-ui/react'
 import React, { useContext, useState } from "react";
-import { AuthContext } from '../../Context/AuthContext';
+import { AuthContext } from '../../../Context/AuthContext';
 
 function SortSelectTag() {
      const {setSort} = useContext(AuthContext)

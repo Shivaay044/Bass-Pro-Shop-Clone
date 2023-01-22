@@ -4,13 +4,12 @@ import { Flex, Spacer } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { useState,useEffect } from "react";
 import axios from 'axios';
-import BoatingProCard from "../Component/ProductsComp/BoatingProCard";
-import CampingCard from "../Component/ProductsComp/CampingCard";
+import CampingCard from "../Component/ProductsComp/ProductCard/CampingCard";
 import Footer from '../Component/NavbarComponet/Footer'
 import Navbar from "../Component/NavbarComponet/Navbar";
 import { AuthContext } from "../Context/AuthContext";
-import SortSelectTag from "../Component/ProductsComp/SortSelectTag";
-
+import SortSelectTag from "../Component/ProductsComp/ShortingComp/SortSelectTag";
+import CampingBrand from "../Component/ProductsComp/filterComp/CampingBrand"
 
 function CampingPg() {
     
@@ -32,24 +31,14 @@ function CampingPg() {
     
     <Text fontSize={40}>FILTER BY</Text>
     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Price</Text>
-     </Box>
-     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Category</Text>
-     </Box>
-     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Brand</Text>
-     </Box>
+     <CampingBrand/>
 
     </Box>
     
     <Box w='80%'  m={10} border='1px solid black'>
     <Flex justifyContent='space-between' m={25}>
       <Box>
-      <Text fontFamily='fantasy' fontSize={20}>FISH FINDERS & NAVIGATION</Text>
+      <Text fontFamily='fantasy' fontSize={20}>CAMPING ACCESSORIES</Text>
       </Box>
       <Box >
       <SortSelectTag/>
@@ -66,6 +55,7 @@ function CampingPg() {
               id={el.id}
               brand={el.ec_brand}
               title={el.title}
+              category={el.category}
               price={el.maxofferprice}
               image={el.topthumbnail}
               />

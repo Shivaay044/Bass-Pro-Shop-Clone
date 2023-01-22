@@ -5,6 +5,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.16",
     "@chakra-ui/react": "^2.4.9",
+    "@chakra-ui/toast": "^5.0.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fortawesome/fontawesome-free": "^6.2.1",
@@ -17,10 +18,12 @@
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.1",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import { border, Box,Grid,Text } from "@chakra-ui/react";
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
-import { useState,useEffect } from "react";
+import ClothingBrand from '../Component/ProductsComp/filterComp/ClothingBrand'
 import axios from 'axios';
-import BoatingProCard from "../Component/ProductsComp/BoatingProCard";
-import CampingCard from "../Component/ProductsComp/CampingCard";
+import ClothingCard from "../Component/ProductsComp/ProductCard/ClothingCard";
 import Footer from '../Component/NavbarComponet/Footer'
 import Navbar from "../Component/NavbarComponet/Navbar";
 import { AuthContext } from "../Context/AuthContext";
-import SortSelectTag from "../Component/ProductsComp/SortSelectTag";
+import SortSelectTag from "../Component/ProductsComp/ShortingComp/SortSelectTag";
 
 
 function ClothingPg() {
@@ -28,24 +27,14 @@ function ClothingPg() {
     
     <Text fontSize={40}>FILTER BY</Text>
     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Price</Text>
-     </Box>
-     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Category</Text>
-     </Box>
-     <hr></hr>
-     <Box>
-     <Text fontSize={20}>FILTER BY Brand</Text>
-     </Box>
+    <ClothingBrand/>
 
     </Box>
     
     <Box w='80%'  m={10} border='1px solid black'>
     <Flex justifyContent='space-between' m={25}>
       <Box>
-      <Text fontFamily='fantasy' fontSize={20}>FISH FINDERS & NAVIGATION</Text>
+      <Text fontFamily='fantasy' fontSize={20}>CLOTHING CORNER</Text>
       </Box>
       <Box >
          <SortSelectTag/>
@@ -58,11 +47,12 @@ function ClothingPg() {
 
           {
             clothing.map((el)=>(
-              <CampingCard
+              <ClothingCard
               id={el.id}
               brand={el.category}
               title={el.name}
-              price={el.prise}
+              category={el.category}
+              price={el.maxofferprice}
               image={el.img}
               />
 
