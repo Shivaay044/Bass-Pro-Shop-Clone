@@ -46,7 +46,7 @@ function LoginSignUpPg() {
    const handleRegister = ()=>{
     setCredentialArr([...CredentialArr,{...Credential}])
 
-    axios.post(` http://localhost:8080/user`,{
+    axios.post(`https://tough-wasp-sun-hat.cyclic.app/user`,{
       ...Credential
     }).then((res)=>toast.success("Register successfully"))
       .catch((err)=>toast.error(err))
@@ -59,7 +59,7 @@ function LoginSignUpPg() {
   
   const handleLogin = ()=>{
     let is = false
-    axios.get(`http://localhost:8080/user`)
+    axios.get(`https://tough-wasp-sun-hat.cyclic.app/user`)
     .then((res)=>setCredentialArr(res.data))
     .catch((err)=>toast.error(err))
 

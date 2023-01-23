@@ -31,7 +31,7 @@ export default function HomeGifCard({ title, brand, price, image, id,category })
      return acc
     },{})
    
-    axios.post(`http://localhost:8080/cart`,
+    axios.post(`https://tough-wasp-sun-hat.cyclic.app/cart`,
      obj
     )
     .then(()=>getCart(),toast("Item added to Cart!"))

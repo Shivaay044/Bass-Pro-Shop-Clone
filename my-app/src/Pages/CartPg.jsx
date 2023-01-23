@@ -20,7 +20,7 @@ import { toast } from 'react-hot-toast';
 import { Toaster } from "react-hot-toast";
 
 export default function CartPg() {
-  const {cart,setDelete} = useContext(AuthContext);
+  const {cart,setDelete,isAuth} = useContext(AuthContext);
   let sum=0
 
  const  handleDelete =(id)=>{

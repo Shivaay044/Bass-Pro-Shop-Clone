@@ -24,7 +24,7 @@ import axios from 'axios'
 
    const getData = async() =>{
     try {
-     let res = await fetch('http://localhost:8080/carousel')
+     let res = await fetch('https://tough-wasp-sun-hat.cyclic.app/carousel')
      let data = await res.json()
      setData(data)
     } catch (error) {

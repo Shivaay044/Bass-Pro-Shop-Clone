@@ -61,20 +61,20 @@ function AuthContextProvider({children}) {
 
     const getCart= () => {
       axios
-        .get(`http://localhost:8080/cart`)
+        .get(`https://tough-wasp-sun-hat.cyclic.app/cart`)
         .then((res) => setCart(res.data))
         .catch((err)=>console.log(err))
     };
 
     const Delete =()=>{
-      axios.delete(`http://localhost:8080/cart/${dlt}`)
+      axios.delete(`https://tough-wasp-sun-hat.cyclic.app/cart/${dlt}`)
       getCart();
     }
 
    
     const getBoating = () => {
       axios
-        .get(`http://localhost:8080/boating`,{
+        .get(`https://tough-wasp-sun-hat.cyclic.app/boating`,{
           params:{
             q:search,
             _sort:"maxofferprice",
@@ -87,7 +87,7 @@ function AuthContextProvider({children}) {
     };
 
     const getCamping = ()=>{
-      axios.get(`http://localhost:8080/camping`,{
+      axios.get(`https://tough-wasp-sun-hat.cyclic.app/camping`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -101,7 +101,7 @@ function AuthContextProvider({children}) {
 
   
     const getClothing = ()=>{
-      axios.get(`http://localhost:8080/clothing`,{
+      axios.get(`https://tough-wasp-sun-hat.cyclic.app/clothing`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -116,7 +116,7 @@ function AuthContextProvider({children}) {
     
 
     const getFishing = ()=>{
-      axios.get(`http://localhost:8080/fishing`,{
+      axios.get(`https://tough-wasp-sun-hat.cyclic.app/fishing`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -131,7 +131,7 @@ function AuthContextProvider({children}) {
     }
 
     const getHomeGif = ()=>{
-      axios.get(`http://localhost:8080/home`,{
+      axios.get(`https://tough-wasp-sun-hat.cyclic.app/home`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -144,7 +144,7 @@ function AuthContextProvider({children}) {
     }
 
     const getShooting = ()=>{
-      axios.get(`http://localhost:8080/shooting`,{
+      axios.get(`https://tough-wasp-sun-hat.cyclic.app/shooting`,{
         params:{
           q:search,
           _sort:"maxofferprice",

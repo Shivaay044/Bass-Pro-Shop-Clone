@@ -115,7 +115,7 @@ const {setSearch} = useContext(AuthContext)
         <Box ml={15}>
             <NavLink to='/cart'> <GiShoppingCart color="black" size={40}/></NavLink>
           <Box bg='cadetblue' fontWeight={'bold'} textAlign={'center'} w={20} h={20} borderRadius={20} display='inline-block'  position='relative' right={4} top={-12}>
-          {cart.length}
+          {isAuth?cart.length:0}
          </Box>
         </Box>
 
