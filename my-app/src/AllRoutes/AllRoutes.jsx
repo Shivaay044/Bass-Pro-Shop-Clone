@@ -40,9 +40,9 @@ export default function AllRoutes(){
             <Route path="/bargainCave" element={<ClothingCavePg/>}/>
             <Route path="/location" element={<LocationPg/>}/>
             <Route path="/cart" element={
-              <PrivateRoute>
+              
                  <CartPg/>
-              </PrivateRoute>
+              
 
             }/>
             <Route path="/register-login" element={<LoginSignUpPg/>}/>

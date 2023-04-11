@@ -61,20 +61,20 @@ function AuthContextProvider({children}) {
 
     const getCart= () => {
       axios
-        .get(`https://tough-wasp-sun-hat.cyclic.app/cart`)
+        .get(`https://bass-backened.onrender.com/cart`)
         .then((res) => setCart(res.data))
         .catch((err)=>console.log(err))
     };
 
     const Delete =()=>{
-      axios.delete(`https://tough-wasp-sun-hat.cyclic.app/cart/${dlt}`)
+      axios.delete(`https://bass-backened.onrender.com/cart/${dlt}`)
       getCart();
     }
 
    
     const getBoating = () => {
       axios
-        .get(`https://tough-wasp-sun-hat.cyclic.app/boating`,{
+        .get(`https://bass-backened.onrender.com/boating`,{
           params:{
             q:search,
             _sort:"maxofferprice",
@@ -87,7 +87,7 @@ function AuthContextProvider({children}) {
     };
 
     const getCamping = ()=>{
-      axios.get(`https://tough-wasp-sun-hat.cyclic.app/camping`,{
+      axios.get(`https://bass-backened.onrender.com/camping`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -101,7 +101,7 @@ function AuthContextProvider({children}) {
 
   
     const getClothing = ()=>{
-      axios.get(`https://tough-wasp-sun-hat.cyclic.app/clothing`,{
+      axios.get(`https://bass-backened.onrender.com/clothing`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -116,7 +116,7 @@ function AuthContextProvider({children}) {
     
 
     const getFishing = ()=>{
-      axios.get(`https://tough-wasp-sun-hat.cyclic.app/fishing`,{
+      axios.get(`https://bass-backened.onrender.com/fishing`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -131,7 +131,7 @@ function AuthContextProvider({children}) {
     }
 
     const getHomeGif = ()=>{
-      axios.get(`https://tough-wasp-sun-hat.cyclic.app/home`,{
+      axios.get(`https://bass-backened.onrender.com/home`,{
         params:{
           q:search,
           _sort:"maxofferprice",
@@ -144,7 +144,7 @@ function AuthContextProvider({children}) {
     }
 
     const getShooting = ()=>{
-      axios.get(`https://tough-wasp-sun-hat.cyclic.app/shooting`,{
+      axios.get(`https://bass-backened.onrender.com/shooting`,{
         params:{
           q:search,
           _sort:"maxofferprice",
