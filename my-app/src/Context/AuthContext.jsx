@@ -22,7 +22,7 @@ function AuthContextProvider({children}) {
   const [cart,setCart] = useState([])
   const [Credential,setCredential] = useState(initCred)
   const [LoginCredential,setLoginCredential] = useState(initLoginCred)
-  const [isAuth,setIsAuth] = useState(false)
+  const [isAuth,setIsAuth] = useState(localStorage.getItem("isAuth")||false)
 
     const [boating, setBoating] = useState([]);
     const [camping,setCamping] =useState([])
@@ -57,7 +57,7 @@ function AuthContextProvider({children}) {
 
     }, [search,sort,filter,Boatfilter,dlt]);
 
-    console.log(cart.length)
+    localStorage.setItem("isAuth",isAuth)
 
     const getCart= () => {
       axios

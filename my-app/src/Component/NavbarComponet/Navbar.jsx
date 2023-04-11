@@ -120,7 +120,7 @@ const {setSearch} = useContext(AuthContext)
         </Box>
 
         <Box>
-        <Button isDisabled={isAuth===false} onClick={()=>{setIsAuth(false);toast.success("Logout success")}} border={"none"} bg={'Background'}>
+        <Button isDisabled={isAuth===false} onClick={()=>{setIsAuth(false);toast.success("Logout success");localStorage.clear()}} border={"none"} bg={'Background'}>
         <FaSignOutAlt size={40}/>
         </Button>
         </Box>
