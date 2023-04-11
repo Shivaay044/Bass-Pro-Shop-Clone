@@ -31,7 +31,7 @@ export default function HomeGifCard({ title, brand, price, image, id,category })
      return acc
     },{})
    
-    axios.post(`https://tough-wasp-sun-hat.cyclic.app/cart`,
+    axios.post(`https://bass-backened.onrender.com/cart`,
      obj
     )
     .then(()=>getCart(),toast("Item added to Cart!"))

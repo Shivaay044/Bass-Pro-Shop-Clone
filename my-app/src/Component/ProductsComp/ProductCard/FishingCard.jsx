@@ -32,7 +32,7 @@ import { Toaster } from 'react-hot-toast';
        return acc
       },{})
      
-      axios.post(`https://tough-wasp-sun-hat.cyclic.app/cart`,
+      axios.post(`https://bass-backened.onrender.com/cart`,
        obj
       )
       .then(()=>getCart(),toast("Item added to Cart!"))
