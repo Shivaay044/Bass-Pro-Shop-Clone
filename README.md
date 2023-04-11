@@ -1,9 +1,7 @@
 # Sepohra-Website-Clone
 
-## About Sephora Website
-* Sephora is a e-cosmetic website which provides users skin,hair care and beauty products.
-Sephora Collection, Sephora offers beauty products including cosmetics, skincare, body,
-fragrance,nail color, beauty tools, body lotions and haircare.
+## About BassPro Shops Website
+* Bass Pro Shops is your trusted source for quality fishing, hunting, boating and outdoor sporting goods. 
 
 
 ## Tech Stack 
@@ -11,13 +9,16 @@ fragrance,nail color, beauty tools, body lotions and haircare.
 * JavaScript 
 * HTML
 * CSS
+* REACT
+* Chakra Ui
+* react router dom
+* Axios
 
 
 ## Modules
 
 * Login,Logout Module
 * User Module
-* Admin Module
 * Route Module
 * Cart Module
 * Payment & Checkout Module
@@ -25,48 +26,39 @@ fragrance,nail color, beauty tools, body lotions and haircare.
 
 ## Features
 
-* User and Admin authentication & validation using API
-* Admin Features:
-     * Able to manage application
-     * Only registered admins can add/update/delete route and bus from main database.
+* User authentication & validation using API
 * User Features:
      * After Registring with application then only user should be able to login into application.
      * Able to See Available Product Over the Product page.
-     * Only Authorized Person Able to Avail the services provided by the website like odering and Add to Whishlist
+     * Only Authorized Person Able to Avail the services provided by the website like odering and Add to cart
      
 
-## Contributors
-* [@K Anjaneyulu](https://github.com/Anji515)
-* [@Shaifali](https://github.com/shaifali-99)
-* [@Rakesh Ranjan Kisku](https://github.com/62rjason)
-* [@Anas Shaikh](https://github.com/zoneAnaS)
-* [@Shivendra Singh](https://github.com/Shivendra-Singh044)
-
+## Individual Project
 
 ## API Root Endpoint
 
-`https://63984905fe03352a94cb30eb.mockapi.io/:endpoint`
+`https://bass-backened.onrender.com/`
 
 
-## Website link :-  https://dapper-cheesecake-326981.netlify.app/home.html
+## Website link :-  https://my-app-one-mu.vercel.app/
 
 
 ## ScreenShots
 
 # HomePage
-[![Screenshot-108.png](https://i.postimg.cc/HWMjkHw7/Screenshot-108.png)](https://postimg.cc/K4Zm06sZ)
+[![Screenshot-116.png](https://i.postimg.cc/d1t3NSV9/Screenshot-116.png)](https://postimg.cc/nsgnC27s)
 
 # Login/SignUp Page
-[![Screenshot-109.png](https://i.postimg.cc/CKvJ5bVJ/Screenshot-109.png)](https://postimg.cc/xkzLFJ8b)
+[![Screenshot-117.png](https://i.postimg.cc/Y9srnrVp/Screenshot-117.png)](https://postimg.cc/r052zkMb)
 
 # ProductPage
-[![Screenshot-110.png](https://i.postimg.cc/q77XPgCK/Screenshot-110.png)](https://postimg.cc/PCBwZXyf)
+[![Screenshot-118.png](https://i.postimg.cc/bvFrM9Sc/Screenshot-118.png)](https://postimg.cc/xkM9NHPt)
 
 # CartPage
-[![Screenshot-111.png](https://i.postimg.cc/7hrzZLbm/Screenshot-111.png)](https://postimg.cc/KkQj9xPM)
+[![Screenshot-121.png](https://i.postimg.cc/YSJkYnm9/Screenshot-121.png)](https://postimg.cc/p9YgtBCb)
 
-# CheckoutPage
-[![Screenshot-112.png](https://i.postimg.cc/0NJrKqT3/Screenshot-112.png)](https://postimg.cc/JyMRSS4c)
+# Location Page
+[![Screenshot-122.png](https://i.postimg.cc/CxrfTg9Q/Screenshot-122.png)](https://postimg.cc/CRDKkWhG)
 
                    
       
