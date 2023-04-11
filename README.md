@@ -1,4 +1,4 @@
-# Sepohra-Website-Clone
+#  BassPro Shops-Website-Clone
 
 ## About BassPro Shops Website
 * Bass Pro Shops is your trusted source for quality fishing, hunting, boating and outdoor sporting goods. 
